@@ -1,0 +1,330 @@
+:root{
+    --colorNav:rgb(191, 163, 163);
+    --colorElementosNavSeleccinados:rgb(149, 129, 129);
+    --colorlaMancha:#c55c90;
+    --colorFooter:#858585;
+    --colorLetraGris:rgb(86, 86, 86);
+    --colorBoton:rgb(219, 219, 84);
+    --colorBotonHover:rgb(229, 229, 146);
+    --colorFondoCajas:rgb(247, 247, 240);
+    --colorFondo:#dbd2c3;
+    --colorDiferente:rgb(41, 41, 41);
+    --colorEnlance:#bc005e;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-color: var(--colorFondo);
+}
+nav{
+    top:0;
+    background-color: var(--colorNav);
+    height: 10vh;
+    width: 100vw;
+    box-shadow: 2px 2px 1rem black;
+    position:fixed;
+}
+ul{
+    display: flex;
+}
+.opcionesMenu{
+    padding-left:2rem;
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    width: 85vw;
+}
+li{
+    list-style-type: none;
+    border-radius: 0.5rem;
+}
+.menu:hover, .sugerencias:hover{
+    background-color:var(--colorElementosNavSeleccinados) ;
+}
+.inicio, .menu, .sugerencias{
+    padding:1rem;
+}
+.opcionesMenu a{
+    text-decoration: none;
+    color:black;
+}
+.containerLogo{
+    width: 15vw;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding:0;
+    font-size: 1.5rem;
+    font-style: italic;
+    color:white;
+    text-shadow:2px 2px 2px black;
+    padding:1rem;
+    -webkit-text-stroke: 0.5px black;
+}
+.laMancha{
+    color:var(--colorlaMancha);
+}
+.posNav-container{
+    margin-left:1rem;
+    margin-top: 5rem;
+    display: flex;
+    align-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.posNav-container a{
+    text-decoration: none;
+}
+.titulo, .enlaceActividad{
+    color:black;
+}
+.titulo:hover, .enlaceActividad:hover{
+    color:rgb(120, 120, 120);
+}
+.separador, .enlaceActividad{
+    font-size: 1rem;
+}
+.container-nombre{
+    display: flex;
+    margin: 20px auto;
+}
+.container-nombre p{
+    font-size: 3rem;
+    padding:0.4rem;
+    border-radius: 1rem;
+    margin-top: 0.3rem;
+
+ }
+.container-imagenes{
+    display: flex;
+    align-items: center;
+    height: 28rem;
+    gap:1rem;
+    overflow-x: auto;
+}
+.imagen{
+    border-radius: 1rem;
+    width:20rem;
+    height: 18rem;
+}
+.imagen:hover{
+    animation: animacionImagen 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes animacionImagen {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform:scale(1.5);
+    }
+    
+}
+.container-info{
+    display: flex;
+    flex-direction: column;
+}
+.descripcionCaja{
+    margin-top:1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom:3rem;
+    padding:0.3rem;
+    border-radius: 1rem;
+    border:1px solid black;
+    background-color:var(--colorFondoCajas);
+}
+.descripcion{
+    margin-top:0.5rem;
+    margin-right:1rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.info{
+    margin-left:0.5rem;
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.dia a, .tipo a{
+    color:var(--colorDiferente);
+}
+.dia a:hover, .tipo a:hover, .hora a:hover, .sociosUcles:hover {
+    color:var(--colorEnlance);
+    text-decoration: underline;
+}
+.informacion{
+    margin-right:1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.iconoInfo{
+    width: 1rem;
+    height: 1rem;
+}
+.descripcion, .tituloHorario, .tituloPrecio, .tituloUbicacion{
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+.tituloUbicacion{
+    text-align: center;
+}
+.descripcionTexto{
+    margin:2rem;
+    font-size: 1.3rem;
+    color:var(--colorLetraGris);
+}
+.disponibilidad, .tiposCantidades{
+    display: flex;
+}
+.horario{
+    border:1px solid black;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    padding:1rem;
+    background-color:var(--colorFondoCajas) ;
+}
+.tituloHorario, .tituloPrecio{
+    text-align: center;
+}
+.tituloHorario, .tituloPrecio, .tituloUbicacion{
+    margin-bottom: 1rem;
+}
+.dia, .tipo{
+    margin-bottom: 0.7rem;
+    color:var(--colorLetraGris);
+}
+.hora, .cantidad{
+    margin-left: 5rem;
+    margin-bottom: 0.7rem;
+    color:var(--colorLetraGris);
+}
+
+.caja2{
+    margin-right:1rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:7rem;
+}
+.sociosUcles{
+    text-decoration: none;
+}
+
+.dias, .horas{
+    display: flex;
+    flex-direction: column;
+}
+.precio{
+    border:1px solid black;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    padding:1rem;
+    background-color: var(--colorFondoCajas);
+}
+.mapa{
+    border-radius: 1rem;
+}
+.ubicacion{
+    border: 1px solid black;
+    padding:1rem;
+    border-radius: 1rem;
+    background-color: var(--colorFondoCajas);
+}
+.link{
+    grid-area: 2/2/3/3;
+    display: flex;
+}
+.encabezadoMapa{
+    display: flex;
+    justify-content: space-between;
+    color:var(--colorLetraGris);
+}
+.encabezadoMapa a {
+    color:var(--colorLetraGris);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.hora a {
+    color:var(--colorLetraGris);
+    text-decoration: none;
+}
+.encabezadoMapa a:hover{
+    color:var(--colorEnlance);
+    text-decoration: underline;
+}
+.boton{
+    padding:2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    background-color: var(--colorBoton);
+}
+.boton:hover{
+    background-color:var(--colorBotonHover) ;
+}
+footer{
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    background-color:  var(--colorFooter);
+}
+.contenedor-footer  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+}
+.footerBox1-1, .footerBox1-2, .footerBox1-3, .caja1-footer{
+    padding:1rem;
+    text-align: center;
+}
+.footerBox1-1{
+    grid-area: 2/1/3/2;
+}
+.footerBox1-2{
+    grid-area: 2/2/3/3;
+}
+.footerBox1-3{
+    grid-area: 2/3/3/4;
+}
+.caja1-footer{
+    text-align: center;
+}
+
+@media screen and (max-width: 811px) and (max-height: 1081px) {
+    nav{
+        height: 6.5vh;
+    }
+    .opcionesMenu {
+        padding-left: 0;
+        gap: 0rem;
+        width: 90vw;
+      }
+    .ubicacion{
+        width: 100%;
+    }
+    .mapa{
+        width: 100%;
+    }
+    footer{
+        height: 40vh;
+    }
+    .contenedor-footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
