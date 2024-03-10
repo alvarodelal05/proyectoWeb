@@ -228,14 +228,17 @@ footer{
         opacity:1;
     }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 480px) {
     nav{
-        height: 7.5vh;
+        height: 12vh;
         border-bottom: 1px solid black;
     }
     .opciones{
         display: flex;
         flex-direction: column;
+    }
+    .tituloActividades, .tituloHistoria{
+        margin-top:3rem;
     }
     .opcionActividades, .opcionHistoria{
         width: 100vw;
@@ -244,8 +247,8 @@ footer{
         height: 22vh;
     }
     footer{
-        bottom: -43rem;
-        height: 35vh;
+        bottom: -58rem;
+        height: 45vh;
     }
     .contenedor-footer  {
         display: flex;
@@ -256,5 +259,11 @@ footer{
         display: flex;
         align-items: center;
         gap:0;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width:1024px){
+    nav{
+        height: 6.5vh;
+        border-bottom: 1px solid black;
     }
 }
