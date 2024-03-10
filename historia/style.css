@@ -1,0 +1,729 @@
+:root{
+    --colorNav:rgb(191, 163, 163);
+    --colorElementosNavSeleccinados:rgb(149, 129, 129);
+    --colorlaMancha:#c55c90;
+    --colorFooter:#858585;
+    --colorBordeElementoForm:#747474;
+    --colorTituloForm:rgb(65, 56, 56);
+    --colorEnlance:#bc005e;
+    --colorFondo:grey;
+    --colorPrehistoria:linear-gradient(90deg, rgb(254, 216, 160) 0%, rgb(254, 254, 118) 50%, rgb(153, 205, 135) 100%);
+    --colorEdadAntigua: linear-gradient(90deg,#8a7356 0%, #C9B79C 50%, #5A4534 100%);
+    --colorEdadMedia:linear-gradient(90deg, #3f7c91 0%, #6A7C72 50%, #D9A679 100%);
+    --colorEdadModerna:linear-gradient(90deg, #8B4513 0%, #C0C0C0 50%, #4682B4 100%);
+    --colorEdadContemporanea:linear-gradient(90deg,#72C2DF 0%, #F29B91 50%, #2A5367 100%);
+    --colorCentralPrehistoria:rgba(255,255,0,1);
+    --colorCentralEdadAntigua:rgba(116,194,0,1);
+    --colorCentralEdadMedia:rgba(255,172,50,1);
+    --colorCentralEdadModerna:rgba(60,165,255,1);
+    --colorCentralEdadContemporanea:rgba(255,65,65,1);
+    --colorCajaInfo:rgb(161, 161, 161);
+}
+@font-face {
+    font-family: 'Prehistoria';
+    src: url('./fuentes/DinopiaRegular-mLrO9.otf') format('opentype');
+}
+@font-face {
+    font-family: 'EdadMedia';
+    src: url('./fuentes/Arrancar-AL7r2.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'EdadAntigua';
+    src: url('./fuentes/Blackcastlemf-BG5n.ttf');
+}
+@font-face {
+    font-family: 'EdadModerna';
+    src: url('./fuentes/Bodonifragiledirt-mEn5.otf');
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav{
+    background-color: var(--colorNav);
+    height: 10vh;
+    box-shadow: 2px 2px 1rem black;
+    border-bottom: 1px solid black;
+}
+ul{
+    display: flex;
+}
+.opcionesMenu{
+    padding-left:2rem;
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    width: 85vw;
+}
+li{
+    list-style-type: none;
+    border-radius: 0.5rem;
+}
+.menu:hover, .sugerencias:hover{
+    background-color:var(--colorElementosNavSeleccinados) ;
+}
+.inicio, .menu, .sugerencias{
+    padding:1rem;
+}
+.opcionesMenu a{
+    text-decoration: none;
+    color:black;
+}
+.containerLogo{
+    width: 15vw;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding:0;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow:2px 2px 2px black;
+    padding:1rem;
+    -webkit-text-stroke: 0.5px black;
+}
+.laMancha{
+    color:var(--colorlaMancha);
+}
+.logo a{
+    color:white;
+}
+.seccionEtapa{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10rem;
+    background-color: var(--colorFondo);
+}
+h1{
+    color:white;
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 0.5rem black;
+    font-size:4rem;
+    margin:2rem;
+}
+.auxiliar{
+    opacity: 0;
+}
+.linea{
+    margin-top: 3rem;
+    align-self: center;
+    height: 20rem;
+    width: 98vw;
+    display:flex;
+    justify-content: space-between;
+    border-radius: 4rem;
+    border:2px solid black;
+}
+h2{
+    display: none;
+}
+.prehistoria, .edadAntigua, .edadMedia, .edadModerna, .edadContemporanea{
+    height: 100%;
+    width: calc(100% / 5);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-align: center;
+    opacity: 0.5;
+}
+
+@keyframes aumentarTamaño {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.3);
+    }
+}
+/* .prehistoria:hover p, .edadAntigua:hover p,
+.edadMedia:hover p, .edadModerna:hover p,
+.edadContemporanea:hover p{
+    animation: aumentarTamaño 1s;
+    animation-fill-mode: forwards;
+    width: 15rem; 
+} */
+.prehistoria:hover, .edadAntigua:hover,
+.edadMedia:hover, .edadModerna:hover,
+.edadContemporanea:hover{
+    cursor: pointer;
+    animation: aparecer2 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes aparecer2 {
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.prehistoria:not(hover), .edadAntigua:not(hover), .edadMedia:not(hover), .edadModerna:not(hover), 
+.edadContemporanea:not(hover){
+    animation: desaparecer 0.5s;
+}
+@keyframes desaparecer {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+.prehistoria{
+    border-top-left-radius:4rem ;
+    border-bottom-left-radius:4rem ;
+    /* background: var(--colorPrehistoria); */
+    background-image: url(./imagenes/prehistoria.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.edadAntigua{
+    /* background: var(--colorEdadAntigua); */
+    background-image: url(./imagenes/EdadAntigua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.edadMedia{
+    /* background: var(--colorEdadMedia); */
+    background-image: url(./imagenes/EdadMedia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.edadModerna{
+    /* background: var(--colorEdadModerna); */
+    background-image: url(./imagenes/EdadModerna.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.edadContemporanea{
+    /* background: var(--colorEdadContemporanea); */
+    background-image: url(./imagenes/EdadContemporanea.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-top-right-radius:4rem ;
+    border-bottom-right-radius:4rem ;
+}
+.imagenEtapa{
+    width: 14rem;
+    height: 12rem;
+}
+.etapa1, .etapa2, .etapa3, .etapa4, .etapa5{
+    border-bottom:2px solid black;
+}
+.etapa1{
+    background: var(--colorPrehistoria); 
+}
+.etapa2{
+    background: var(--colorEdadAntigua);
+}
+.etapa3{
+    background: var(--colorEdadMedia);
+}
+.etapa4{
+    background: var(--colorEdadModerna);
+}
+.etapa5{
+    background: var(--colorEdadContemporanea);
+}
+.contenidoEtapa{
+    margin-right: 2rem;
+    margin-left: 2rem;  
+    display:grid;   
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2,1fr);
+}
+.infoEtapa{
+    padding: 2rem;
+    border-radius: 3rem;
+    border:0.2rem dashed  black;
+    margin-top:2rem;
+    grid-area: 1/1/3/2;
+    margin-right: 6rem;
+    margin-bottom:2rem;
+}
+.evolucion{
+    grid-area: 2/2/3/3;
+    display: grid;
+    overflow-y: auto;
+    max-height: 60vh;
+    align-self: center;
+    border:0.2rem dashed  black;
+    border-radius:3rem ;
+    margin-bottom: 2rem;
+}
+.tituloEvolucion, .tituloVestimenta{
+    text-align: center;
+    margin:2rem;
+}
+.tituloInfo{
+    margin:0.5rem;
+    margin-left: 0rem;
+}
+.tituloEvolucion{
+    position: sticky;
+    z-index: 1;
+    top:0;
+}
+.tituloVestimenta{
+    grid-area: 1/1/2/4;
+}
+#cajaNombreEtapaPrehistoria, #cajaNombreEtapaAntigua, #cajaNombreEtapaMedia, #cajaNombreEtapaModerna, #cajaNombreEtapaContemporanea{
+    top:0;
+    display: flex;
+    justify-content: center;
+}
+#cajaNombreEtapaPrehistoria{
+    background-image: url(./imagenes/prehistoria/bannerPrehistoria.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    border-image-repeat: stretch;
+
+}
+#cajaNombreEtapaAntigua{
+    background-image: url(./imagenes/edadAntigua/bannerEdadAntigua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#cajaNombreEtapaMedia{
+    background-image: url(./imagenes/edadmedia/bannerEdadMedia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#cajaNombreEtapaModerna{
+    background-image: url(./imagenes/edadModerna/bannerEdadModerna.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#cajaNombreEtapaContemporanea{
+    background-image: url(./imagenes/edadContemporanea/bannerContemporaneo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.nombreEtapaPrehistoria, .nombreEtapaAntigua, .nombreEtapaMedia, .nombreEtapaModerna, .nombreEtapaContemporanea{
+    font-size: 1.9rem;
+}
+.nombreEtapaPrehistoria{
+    background-image: url(./imagenes/prehistoria/cartelPrehistoria.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 25rem;
+}
+.nombreEtapaAntigua{
+    background-image: url(./imagenes/edadAntigua/cartelEdadAntigua.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 25rem;
+}
+.nombreEtapaMedia{
+    background-image: url(./imagenes/edadmedia/cartelEdadMedia.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 25rem;
+}
+.nombreEtapaModerna{
+    background-image: url(./imagenes/edadModerna/cartelEdadModerna.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 25rem;
+}
+.nombreEtapaContemporanea{
+    background-image: url(./imagenes/edadContemporanea/cartelEdadContemporanea.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 25rem;
+}
+.infoEtapa p{
+    font-size: 1.3rem;
+}
+.infoEtapa p b{
+    margin:1rem;
+}
+.vestimenta{
+    margin-top:2rem;
+    grid-area: 1/2/2/3;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    align-self: center;
+    border:0.2rem dashed  black;
+    border-radius: 3rem;
+    margin-bottom:2rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+.fotoMapa1, .fotoMapa2, .fotoMapa3, .fotoMapa4, .fotoMapa5, .fotoMapa6{
+    border-radius: 1rem;
+    margin-bottom:3rem;
+    width: 26rem;
+    height: 20rem;
+    justify-self: center;
+    padding:2rem;
+}
+.fotoMapa1{
+    grid-area: 2/1/3/2;
+    z-index: 0;
+}
+.textoFoto, .textoFoto1{
+    grid-area: 2/1/3/2;
+}
+.textoFoto2, .fotoMapa2{
+    grid-area: 3/1/4/2; 
+}
+.textoFoto3, .fotoMapa3{
+    grid-area: 4/1/5/2; 
+}    
+.textoFoto4, .fotoMapa4{
+    grid-area: 5/1/6/2; 
+}    
+.textoFoto5, .fotoMapa5{
+    grid-area: 6/1/7/2; 
+}    
+.textoFoto6, .fotoMapa6{
+    grid-area: 7/1/8/2; 
+}    
+.textoFoto1, .textoFoto2, .textoFoto3, .textoFoto4, .textoFoto5, .textoFoto6{
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+    opacity: 0;
+    padding:1rem;
+    background-color: var(--colorCajaInfo);
+    border-radius: 1rem;
+    border:1px solid black;
+}
+.textoFoto1:hover, .textoFoto2:hover, .textoFoto3:hover, .textoFoto4:hover, .textoFoto5:hover, .textoFoto6:hover{
+    animation: aparecer 1s;
+    animation-fill-mode: forwards;
+}
+.fotoMapa1:hover + .textoFoto1,
+.fotoMapa2:hover + .textoFoto2,
+.fotoMapa3:hover + .textoFoto3,
+.fotoMapa4:hover + .textoFoto4,
+.fotoMapa5:hover + .textoFoto5,
+.fotoMapa6:hover + .textoFoto6{
+    animation: aparecer 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes aparecer {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:0.9;
+    }
+}
+.fotoRopaPrehistoria1, .fotoRopaPrehistoria2, .fotoRopaPrehistoria3, .fotoRopaAntigua2, .fotoRopaAntigua6{
+    width: 6rem;
+    height: 12rem;
+    margin: 3rem;
+}
+.fotoRopaPrehistoria4, .fotoRopaPrehistoria5, .fotoRopaPrehistoria6{
+    width: 5rem;
+    height: 6rem;
+    margin:3rem
+}
+.fotoRopaAntigua1, .fotoRopaAntigua4, .fotoRopaAntigua5{
+    width: 5.5rem;
+    height: 15em;
+    margin: 3rem;
+}
+.fotoRopaAntigua3, .fotoRopaAntigua5{
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: 3rem;
+}
+.fotoRopaMedia1, .fotoRopaMedia2, .fotoRopaMedia3, .fotoRopaMedia4, .fotoRopaMedia6{
+    width: 6rem;
+    height: 13.5rem;
+    margin: 3rem;
+}
+.fotoRopaMedia5{
+    width: 4rem;
+    height: 5rem;
+    margin: 3rem;
+    align-self: end;
+}
+.fotoRopaModerna1, .fotoRopaModerna2, .fotoRopaModerna3, .fotoRopaModerna4, .fotoRopaModerna5{
+    margin: 3rem;
+}
+.fotoRopaContemporanea1, .fotoRopaContemporanea2, .fotoRopaContemporanea3{
+    margin: 3rem;
+    width: 7rem;
+    height: 9rem;
+}
+.fotoRopaContemporanea4{
+    margin: 3rem;
+    width: 8rem;
+    height: 15rem;
+}
+.fotoRopaContemporanea5, .fotoRopaContemporanea6{
+    margin: 3rem;
+    width: 7rem;
+    height: 7rem;
+}
+.tituloVestimenta{
+    margin-bottom: 0rem;
+}
+.fotoRopaPrehistoria1:hover, .fotoRopaPrehistoria2:hover, .fotoRopaPrehistoria3:hover, .fotoRopaPrehistoria4:hover,
+.fotoRopaPrehistoria5:hover, .fotoRopaPrehistoria6:hover,
+ .fotoRopaAntigua1:hover, .fotoRopaAntigua2:hover, .fotoRopaAntigua3:hover, 
+.fotoRopaAntigua4:hover, .fotoRopaAntigua5:hover, .fotoRopaAntigua6:hover,
+.fotoRopaMedia1:hover, .fotoRopaMedia2:hover, .fotoRopaMedia3:hover, .fotoRopaMedia4:hover, .fotoRopaMedia5:hover,
+.fotoRopaMedia6:hover,
+.fotoRopaModerna1:hover, .fotoRopaModerna2:hover, .fotoRopaModerna3:hover, .fotoRopaModerna4:hover,
+.fotoRopaModerna5:hover,
+.fotoRopaContemporanea1:hover, .fotoRopaContemporanea2:hover, .fotoRopaContemporanea3:hover,
+.fotoRopaContemporanea4:hover, .fotoRopaContemporanea5:hover, .fotoRopaContemporanea6:hover{
+    animation: agrandar 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes agrandar {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.6);
+    }
+}
+footer{
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    background-color:  var(--colorFooter);
+}
+.contenedor-footer  {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+}
+.footerBox1-1, .footerBox1-2, .footerBox1-3, .caja1-footer{
+    padding:1rem;
+    text-align: center;
+}
+.footerBox1-1{
+    grid-area: 2/1/3/2;
+}
+.footerBox1-2{
+    grid-area: 2/2/3/3;
+}
+.footerBox1-3{
+    grid-area: 2/3/3/4;
+}
+.caja1-footer{
+    text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    .prehistoria, .edadAntigua, .edadMedia, .edadModerna, .edadContemporanea{
+        opacity: 1;
+    }
+    nav {
+      height: 8vh;
+      width: 100vw;
+    }
+  
+    .opcionesMenu{
+        padding-left:1rem;
+        display: flex;
+        align-items: center;
+        gap:0rem;
+        width: 20vw;
+    }
+  
+    .containerLogo {
+      width: 30vw;
+    }
+  
+    .logo {
+      font-size: 1.2rem;
+    }
+  
+    .seccionEtapa {
+      height: auto;
+      padding-bottom: 5rem;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    .linea {
+      margin-top: 1.5rem;
+      height: 15rem;
+    }
+  
+    .prehistoria, .edadAntigua, .edadMedia, .edadModerna, .edadContemporanea {
+      width: 100%;
+    }
+  
+    .imagenEtapa {
+      width: 10rem;
+      height: 8rem;
+    }
+  
+    .etapa1, .etapa2, .etapa3, .etapa4, .etapa5 {
+      height: auto;
+    }
+  
+    .etapa1, .etapa2, .etapa3, .etapa4, .etapa5 {
+      background-size: contain;
+    }
+  
+    .contenidoEtapa {
+      margin-right: 1rem;
+      margin-left: 1rem;
+      display:flex;
+      flex-direction: column;
+    }
+    .textoFoto1, .textoFoto2, .textoFoto3, .textoFoto4, .textoFoto5, .textoFoto6 {
+        opacity: 1;
+    }
+    .infoEtapa {
+        margin-right: 0;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tituloEvolucion{
+        grid-area: 1/1/2/2;
+    }
+    .textoFoto1{
+        grid-area: 2/1/3/2;
+    }
+    .textoFoto2{
+        grid-area: 4/1/5/2; 
+    }
+    .textoFoto3{
+        grid-area: 6/1/7/2; 
+    }    
+    .textoFoto4{
+        grid-area: 8/1/9/2; 
+    }    
+    .textoFoto5{
+        grid-area: 10/1/11/2; 
+    }    
+    .textoFoto6{
+        grid-area: 12/1/13/2; 
+    }
+    .fotoMapa1, .fotoMapa2, .fotoMapa3, .fotoMapa4, .fotoMapa5, .fotoMapa6{
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        width: 90%;
+    }
+    .textoFoto1:hover, .textoFoto2:hover, .textoFoto3:hover, .textoFoto4:hover, .textoFoto5:hover, .textoFoto6:hover{
+        animation: none;
+    }
+        
+    
+    .fotoMapa1{
+        grid-area: 3/1/4/2; 
+    }
+    .fotoMapa2{
+        grid-area: 5/1/6/2; 
+    }
+    .fotoMapa3{
+        grid-area: 7/1/8/2; 
+    }
+    .fotoMapa4{
+        grid-area: 9/1/10/2; 
+    }
+    .fotoMapa5{
+        grid-area: 11/1/12/2;
+    }
+    .fotoMapa6{
+        grid-area: 13/1/14/2;
+    }
+    .evolucion {
+      max-height: 40vh;
+      margin-bottom: 2rem;
+      width: 80vw;
+    }
+
+    .vestimenta{
+        margin-right: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+        width: 90vw;
+    }
+  
+    .footerBox1-1, .footerBox1-2, .footerBox1-3, .caja1-footer {
+      padding: 0.5rem;
+    }
+  
+    .nombreEtapaPrehistoria, .nombreEtapaAntigua, .nombreEtapaMedia, .nombreEtapaModerna, .nombreEtapaContemporanea {
+      height: 15rem;
+      width: 15rem;
+    }
+  
+    .fotoRopaPrehistoria1, .fotoRopaPrehistoria2, .fotoRopaPrehistoria3, .fotoRopaAntigua2, .fotoRopaAntigua6,
+    .fotoRopaPrehistoria4, .fotoRopaPrehistoria5, .fotoRopaPrehistoria6, .fotoRopaAntigua1, .fotoRopaAntigua4,
+    .fotoRopaAntigua5, .fotoRopaAntigua3, .fotoRopaAntigua5, .fotoRopaMedia1, .fotoRopaMedia2, .fotoRopaMedia3,
+    .fotoRopaMedia4, .fotoRopaMedia6, .fotoRopaModerna1, .fotoRopaModerna2, .fotoRopaModerna3, .fotoRopaModerna4,
+    .fotoRopaModerna5, .fotoRopaContemporanea1, .fotoRopaContemporanea2, .fotoRopaContemporanea3, .fotoRopaContemporanea4,
+    .fotoRopaContemporanea5, .fotoRopaContemporanea6 {
+      transform: scale(0.7);
+      margin: 0rem;
+    }
+
+    }
+  
+  
+  /* Estilos para tabletas (768px a 1023px) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .prehistoria, .edadAntigua, .edadMedia, .edadModerna, .edadContemporanea{
+        opacity: 1;
+    }
+    nav{
+        height: 6vh;
+    }
+    .contenidoEtapa{
+        display: flex;
+        flex-direction: column;
+    }
+    .infoEtapa, .evolucion, .vestimenta{
+        margin-left: 0rem;
+        margin-right: 0rem;
+        width: 100%;
+    }
+    .fotoRopaPrehistoria1, .fotoRopaPrehistoria2, .fotoRopaPrehistoria3, .fotoRopaAntigua2, .fotoRopaAntigua6,
+    .fotoRopaPrehistoria4, .fotoRopaPrehistoria5, .fotoRopaPrehistoria6, .fotoRopaAntigua1, .fotoRopaAntigua4,
+    .fotoRopaAntigua5, .fotoRopaAntigua3, .fotoRopaAntigua5, .fotoRopaMedia1, .fotoRopaMedia2, .fotoRopaMedia3,
+    .fotoRopaMedia4, .fotoRopaMedia6, .fotoRopaModerna1, .fotoRopaModerna2, .fotoRopaModerna3, .fotoRopaModerna4,
+    .fotoRopaModerna5, .fotoRopaContemporanea1, .fotoRopaContemporanea2, .fotoRopaContemporanea3, .fotoRopaContemporanea4,
+    .fotoRopaContemporanea5, .fotoRopaContemporanea6 {
+      transform: scale(1);
+      margin: 1rem;
+    }
+  }
+  
