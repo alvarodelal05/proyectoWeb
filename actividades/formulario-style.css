@@ -14,7 +14,7 @@
 }
 nav{
     background-color: var(--colorNav);
-    height: 10vh;
+    height: 6vh;
     box-shadow: 2px 2px 1rem black;
 }
 ul{
@@ -144,12 +144,12 @@ footer{
 .caja1-footer{
     text-align: center;
 }
-@media screen and (max-width: 811px) and (max-height: 1081px) {
+@media screen and (max-width: 480px){
     form{
         transform: scale(0.9);
     }
     nav {
-        height: 5.5vh;
+        height: 9vh;
       }
     .containerLogo {
         width: 30vw;
@@ -173,8 +173,12 @@ footer{
         height: 40vh;
     }
 }
-@media screen and (max-width: 767px) and (max-height: 1024px) {
+@media screen and (min-width: 480px) and (max-height: 1080px) {
     nav{
-        height: 7vh;
+        height: 12vh;
+    }
+    footer{
+        height: 20vh;
+        bottom:-10rem;
     }
 }
